@@ -12,6 +12,8 @@ import { Routes, Route } from "react-router-dom";
 import SearchBar from "./Components/SearchBar";
 import SweetList from "./Components/SweetList";
 import SweetDetail from "./Components/SweetDetail";
+import { NavLink } from "react-router-dom";
+import sweetStore from "./Store/sweetStore";
 
 // const useStyles = makeStyles({
 //   root: {
@@ -26,21 +28,28 @@ function App() {
     <div className="App">
       <AppBar position="sticky" style={{ background: "#1c1347" }}>
         <Toolbar>
-          <Box variant="h6" component="div" sx={{ flexGrow: 1 }}></Box>
+          <Box variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <SearchBar />
+          </Box>
         </Toolbar>
       </AppBar>
       <img src={logo} style={{ width: "400px", height: "300px" }} alt="logo" />
-      <Routes>
-        <Route path="/" element={<SearchBar />} />
-      </Routes>
-      <Routes>
+      {/* <Routes>
+        <Route path="/" element={} />
+      </Routes> */}
+      {/* <Routes>
         <Route path="/SweetList/:sweetSlug" element={<SweetDetail />} />
-      </Routes>
+      </Routes> */}
 
       <Routes>
         <Route path="/SweetList" element={<SweetList />} />
       </Routes>
+      <br />
+      <NavLink to="https://www.instagram.com/danias.lastcourse/">
+        Powered By CozyTech
+      </NavLink>
 
+      <br />
       <br />
       <BottomNavigation
         style={{ background: "#1c1347" }}
