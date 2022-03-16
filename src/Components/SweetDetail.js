@@ -4,14 +4,12 @@ import { observer } from "mobx-react";
 import { useParams } from "react-router";
 import { Navigate } from "react-router-dom";
 const SweetDetail = () => {
-  const { sweetSlug } = useParams();
+  // const { sweetSlug } = useParams();
+  // if (sweetStore.isLoading) return <p>Loading</p>;
+  // const sweet = sweetStore.sweets.find((sweet) => sweet.slug === sweetSlug);
+  // if (!sweet) return <Navigate to="/SweetList" />;
 
-  if (sweetStore.isLoading) return <p>Loading</p>;
-
-  const sweet = sweetStore.sweets.find((sweet) => sweet.slug === sweetSlug);
-  if (!sweet) return <Navigate to="/SweetList" />;
-
-  return <div>hiiiiiii</div>;
+  return <div></div>;
 };
 
 export default observer(SweetDetail);
