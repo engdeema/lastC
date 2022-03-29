@@ -2,12 +2,12 @@ import {
   Button,
   CardContent,
   Typography,
-  Link,
   Grid,
   Card,
   CardMedia,
 } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function SweetItem({ sweet }) {
   return (
@@ -24,15 +24,10 @@ function SweetItem({ sweet }) {
             {sweet.name}
           </Typography>
         </CardContent>
-        <Link to={`SweetDetail/${sweet._id}`}>
+        <Link to={`/order/${sweet._id}`}>
           <Button style={{ width: "100%" }} variant="contained" size="small">
-            Start Your Order
+            order
           </Button>
-
-          <Button
-            title="Start Your Order"
-            // onClick={()=>}
-          />
         </Link>
       </Card>
     </Grid>

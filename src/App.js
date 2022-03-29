@@ -36,12 +36,13 @@ function App() {
       </AppBar>
       <img src={logo} style={{ width: "400px", height: "300px" }} alt="logo" />
       <Routes>
-        <Route path="/SweetList" element={<SweetList />} />
-        <Route path="/Calendar" element={<Calendar />} />
+        <Route path="/sweet-list" element={<SweetList />} />
+        <Route path="order/:id" element={<Calendar />} />
       </Routes>
       <NavLink to="https://www.instagram.com/danias.lastcourse/">
         Powered By CozyTech
       </NavLink>
+
       <BottomNavigation
         style={{ background: "#1c1347" }}
         value={value}
@@ -54,12 +55,7 @@ function App() {
         <Box variant="h6" component="div" sx={{ flexGrow: 1 }}>
           <BottomNavigationAction
             label="Instagram"
-            icon={
-              <InstagramIcon
-                style={{ color: "#FFFFFF" }}
-                onClick={() => console.log("test")}
-              />
-            }
+            icon={<InstagramIcon style={{ color: "#FFFFFF" }} />}
           />
           <BottomNavigationAction
             label="Contacts"
