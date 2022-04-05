@@ -2,15 +2,29 @@ import React, { useState } from "react";
 import "antd/dist/antd.css";
 import { Button, DatePicker, TimePicker } from "antd";
 import moment from "moment";
+import { useParams } from "react-router-dom";
+import apiFetch from "../Store/instance";
 
 function Calendar() {
   const [cDate, setCDate] = useState(moment());
   const [time, setTime] = useState(moment());
+  const { id } = useParams();
 
   const onChange = (value) => {
     setTime(value);
   };
-  const handleSubmit = () => {};
+  const handleSubmit = async () => {
+    const data = {
+      id,
+      date: cDate.format("YYYY-MM-DD"),
+      time: time.format("HH:MM"),
+    };
+    let result = await apiFetch.post("/order", data);
+
+    const resultData = result.data;
+    console.log(resultData);
+  };
+
   return (
     <div>
       <h1>Please choose time of delivery</h1>
@@ -55,7 +69,7 @@ function Calendar() {
           };
         }}
       />
-      <Button>Submit</Button>
+      <Button onClick={handleSubmit}>Submit</Button>
     </div>
   );
 }
