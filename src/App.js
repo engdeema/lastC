@@ -14,8 +14,7 @@ import SweetList from "./Components/SweetList";
 import SweetDetail from "./Components/SweetDetail";
 import { NavLink } from "react-router-dom";
 import sweetStore from "./Store/sweetStore";
-import Calendar from "./Components/Calendar";
-
+import Order from "./Components/Order";
 // const useStyles = makeStyles({
 //   root: {
 //     width: 500,
@@ -37,7 +36,7 @@ function App() {
       <img src={logo} style={{ width: "400px", height: "300px" }} alt="logo" />
       <Routes>
         <Route path="/sweet-list" element={<SweetList />} />
-        <Route path="order/:id" element={<Calendar />} />
+        <Route path="order/:id" element={<Order />} />
       </Routes>
       <NavLink to="https://www.instagram.com/danias.lastcourse/">
         Powered By CozyTech
